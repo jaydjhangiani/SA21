@@ -21,6 +21,7 @@ html {
 	width: 100%;
 	display: flex;
 	/*position: fixed;*/
+	text-align: justify;
 
 	/*font-family: "Open Sans", sans-serif;*/
 	font-weight: 800;
