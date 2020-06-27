@@ -11,10 +11,10 @@ canvas {
 	z-index: -9999;
 }
 
-.pad {
-	margin-left: 10px;
+li {
+	display: flex;
+	padding-top: 10px !important;
 }
-
 html {
 	margin: 0;
 	height: 100%;
@@ -29,7 +29,6 @@ html {
 }
 
 .card {
-	
 	border-radius: 5px !important;
 }
 
