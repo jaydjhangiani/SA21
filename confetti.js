@@ -8,6 +8,10 @@ function playAudio(url) {
 
 }
 
+function stopmusic() {
+  music.pause();
+}
+
 
 
 (function run() {
