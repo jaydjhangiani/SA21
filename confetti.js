@@ -1,3 +1,14 @@
+var music = new Audio();
+
+function playAudio(url) {
+
+  music.pause();
+  music = new Audio(url);
+  music.play();
+
+}
+
+
 
 (function run() {
   var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
@@ -16,22 +27,22 @@
 
   window.h = 0;
 
-  resizeWindow = function() {
+  resizeWindow = function () {
     window.w = canvas.width = window.innerWidth;
     return window.h = canvas.height = window.innerHeight;
   };
 
   window.addEventListener('resize', resizeWindow, false);
 
-  window.onload = function() {
+  window.onload = function () {
     return setTimeout(resizeWindow, 0);
   };
 
-  range = function(a, b) {
+  range = function (a, b) {
     return (b - a) * Math.random() + a;
   };
 
-  drawCircle = function(x, y, r, style) {
+  drawCircle = function (x, y, r, style) {
     context.beginPath();
     context.arc(x, y, r, 0, PI_2, false);
     context.fillStyle = style;
@@ -40,12 +51,12 @@
 
   xpos = 0.5;
 
-  document.onmousemove = function(e) {
+  document.onmousemove = function (e) {
     return xpos = e.pageX / w;
   };
 
-  window.requestAnimationFrame = (function() {
-    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+  window.requestAnimationFrame = (function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
       return window.setTimeout(callback, 1000 / 60);
     };
   })();
@@ -90,7 +101,7 @@
 
   };
 
-  confetti = (function() {
+  confetti = (function () {
     var j, ref, results;
     results = [];
     for (i = j = 1, ref = NUM_CONFETTI; (1 <= ref ? j <= ref : j >= ref); i = 1 <= ref ? ++j : --j) {
@@ -99,7 +110,7 @@
     return results;
   })();
 
-  window.step = function() {
+  window.step = function () {
     var c, j, len, results;
     requestAnimationFrame(step);
     context.clearRect(0, 0, w, h);
